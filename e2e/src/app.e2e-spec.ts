@@ -7,8 +7,15 @@ describe('new App', () => {
     page = new AppPage();
   });
 
-  it('should be blank', () => {
+  it('Se deberia mostrar mensaje', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toContain('Start with Ionic UI Components');
+    expect(page.getPageTitle()).toContain('AdoptaPetsAPP');
   });
+
+  it('Deberia contener Botones Ingresar y Registarse', () => {
+    page.navigateTo();
+    expect(page.getPageBoton()).toContain('INGRESAR','REGISTRARSE');
+  });
+
+  
 });
